@@ -1,0 +1,8 @@
+2 * 6371* ASIN(SQRT(POW(((SIN(([WH_lat_0]*(3.14159/180)-[Destination_Latitude]*(3.14159/180))/2))),2)+COS([WH_lat_0]*(3.14159/180))*COS([Destination_Latitude]*(3.14159/180))*POW(SIN((([WH_long_0]*(3.14159/180)-[Destination_Longitude]*(3.14159/180))/2)),2)))
+
+For Alteryx above formula to be used
+For excel below formula to be used
+
+
+
+=2 * 6371* ASIN(SQRT((SIN((LAT2*(3.14159/180)-LAT1*(3.14159/180))/2))^2+COS(LAT2*(3.14159/180))*COS(LAT1*(3.14159/180))*SIN(((LONG2*(3.14159/180)-LONG1*(3.14159/180))/2))^2))

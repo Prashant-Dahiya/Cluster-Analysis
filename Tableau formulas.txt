@@ -1,0 +1,17 @@
+Final demand
+
+if [Type]= 'Circle' then 20510
+ELSE [Total Demand]
+END
+
+Latitude final
+IF [Type]="Circle" THEN
+DEGREES( ASIN(SIN(RADIANS([Destination Latitude]))*COS(([Radius in KM]*[Rdius])/6371) + COS(RADIANS([Destination Latitude]))*SIN(([Radius in KM]*[Rdius])/6371)*COS(RADIANS([Degree]))) )
+ELSE [Destination Latitude]
+END
+
+Longitude final
+IF [Type]="Circle" THEN
+DEGREES(RADIANS( [Destination Longitude] ) +  ATAN2(COS(([Radius in KM]*[Rdius])/6371)-SIN(RADIANS( [Destination Latitude] ))*SIN(RADIANS( [Latitude final] )), SIN(RADIANS([Degree]))*SIN(([Radius in KM]*[Rdius])/6371)*COS(RADIANS( [Destination Latitude] ))) )-90
+ELSE [Destination Longitude]
+END
